@@ -1,0 +1,63 @@
+.mainBlock{
+	margin-top: 20px;
+}
+.MyContent1{
+
+    display: inline-block;
+    float: left;
+    height: 100%;
+    width: 43%;
+	margin-left: 3%;
+}
+
+
+.MyContent2{
+
+    display: inline-block;
+    float: right;
+    height: 100%;
+    width: 43%;
+    margin-left: 3%;
+}
+.TextArea1{
+	width: 500px;
+	height: 180px;
+}
+.myResult{
+	width: 400px;
+	height: 150px;
+	background-color: #efefef;
+	color: white;
+}
+.NumberArea1{
+    width: 600px;
+}
+.keyInput{
+    display: inline-block;
+}
+
+.inputNumber{
+    display: inline-block;
+    width: 150px;
+    margin-left: 30px;
+}
+.ImgArrow{
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    margin-top: 100px;
+}
+.Img2 {
+    height: inherit;
+    width: inherit;
+}
+
+.saveButton{
+    margin-left: 75px;
+    display: inline-block;
+}
+
+.MainSubmitButton{
+    margin-top: -39px;
+    margin-left: 380px;
+}
