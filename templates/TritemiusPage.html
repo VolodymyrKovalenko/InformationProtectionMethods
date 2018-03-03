@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>encryption12</title>
+
+    <link rel="stylesheet" href="../static/bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <script src="../static/js/main.js"></script>
+</head>
+<body>
+    <style type="text/css">
+	input:not(:checked) + label.r1{
+		display: none;
+
+	}
+
+</style>
+    <script type="text/javascript">
+let radio = document.getElementsByClassName('radio1');
+
+function disableLabel(targ) {
+for (var i = 0; i < radio.length; i++) {
+if(radio[i].id != targ) radio[i].value = '';
+    }
+        }
+</script>
+{#    <nav class="navbar navbar-inverse bg-inverse">#}
+        <nav class="navbar navbar-inverse bg-inverse">
+
+        <div class="top_div">
+    <a href="/" class="btn btn-secondary active" role="button" aria-pressed="true">Caesar chifr</a>
+    <a href="/tritemius" class="btn btn-primary active" role="button" aria-pressed="true">Tritemius chifr</a>
+    </div>
+
+
+
+
+  <!-- Navbar content -->
+    </nav>
+
+
+    <div class="mainBlock">
+    <div class="MyContent1">
+        <form  action="" method="post">
+            <div><b>Enter message that you want to encrypt:</b></div>
+
+            <div><textarea class="TextArea1" id="myTextArea1" rows="10" cols="55" name="TextEncr">{{ my_data2 }}</textarea></div>
+                <div class="NumberArea1">
+
+                    <input type="radio" name="1"  id="1"><label class="r1 " for="1">Enter slogan key:<br>
+                    <input class="radio1 inputNumber form-control" type="text" name="InpKey1" id="disableKey2"></label>
+
+                    <input type="radio" name="1" id="2"><label class="r1" for="2" >Enter linear equation key:<br>
+                    <input id="disableKey2" class="radio1 linear_eq form-control" type="number" name="InpKey21">  * P + <input id="disableKey2" class="radio1 linear_eq form-control" type="number" name="InpKey22">
+                    </label>
+
+                    <input type="radio" name="1" id="3" checked=""><label class="r1" for="3" >Enter nonlinear equation key: <br>
+                     <input id="disableKey2" class="radio1 linear_eq form-control" type="number" name="InpKey31"> * P^2 + <input id="disableKey2" class="radio1 linear_eq form-control" type="number" name="InpKey32"> * P +
+                    <input id="disableKey2" class="radio1 linear_eq form-control" type="number" name="InpKey33">
+                </label>
+{#                    <input class="inputNumber form-control" name="InpKey1" type="text" id="example-number-input">#}
+                </div>
+            <div class="saveButton">
+                        <button class="btn btn-secondary" onclick="saveTextAsFile2()" value="save2" id="save2">Save Text to File</button>
+                    <div class="eror1">{{ er_info }}</div>
+                    </div>
+            <div>
+{#                <label for="file">Choose file to upload</label>#}
+                <label class="custom-file">
+                <input class="custom-file-input" type="file" id="file1" name="file" onchange="onLoad()">
+                <span class="custom-file-control"></span>
+                    </label>
+            </div>
+            <div class="MainSubmitButton"><input class="btn btn-primary" type="submit" name="form1"  value="Encrypt"></div>
+        </form>
+
+    </div>
+        <div  class="ImgArrow"><img class="Img2" src="../static/img/____20140606_1026252225.png" alt=""></div>
+
+    <div class="MyContent2">
+        <form  action="" method="post" enctype="multipart/form-data">
+            <div><b>Enter message that you want to decrypt:</b></div>
+            <div><textarea class="TextArea1" id="myTextArea2" rows="10" cols="55" name="TextDecr">{{ my_data1 }}</textarea></div>
+            <div class="NumberArea1">
+
+                    <input type="radio" name="1"  id="1"><label class="r1 " for="1">Enter slogan key:<br>
+                    <input class="inputNumber form-control" type="text" name="InpKey4" id="disableKey2"></label>
+
+                    <input type="radio" name="1" id="2"><label class="r1" for="2" >Enter linear equation key:<br>
+                    <input id="disableKey2" class="linear_eq form-control" type="number" name="InpKey51">  * P + <input id="disableKey2" class="linear_eq form-control" type="number" name="InpKey52">
+                    </label>
+
+                    <input type="radio" name="1" id="3" checked=""><label class="r1" for="3" >Enter nonlinear equation key: <br>
+                     <input id="disableKey2" class="linear_eq form-control" type="number" name="InpKey61"> * P^2 + <input id="disableKey2" class="linear_eq form-control" type="number" name="InpKey62"> * P +
+                    <input id="disableKey2" class="linear_eq form-control" type="number" name="InpKey63">
+                </label>
+{#                    <input class="inputNumber form-control" name="InpKey1" type="text" id="example-number-input">#}
+                </div>
+             <div class="saveButton">
+                        <button class="btn btn-secondary" onclick="saveTextAsFile2()" value="save2" id="save2">Save Text to File</button>
+                        <div class="eror1">{{ er_info2 }}</div>
+                    </div>
+            <div>
+{#                <label for="file">Choose file to upload</label>#}
+                <label class="custom-file">
+                    <input class="custom-file-input" type="file" id="file2" name="file" onchange="onLoad2()">
+                    <span class="custom-file-control"></span>
+                </label>
+            </div>
+
+
+            <div class="MainSubmitButton"><input class="btn btn-primary" type="submit" name="form2" value="Decrypt"></div>
+        </form>
+
+    </div>
+        </div>
+
+
+
+</body>
+    <script src="../static/bootstrap-4.0.0-alpha.6-dist/js/bootstrap.js"></script>
+{#    <script src="../static/bootstrap-4.0.0-alpha.6-dist/js/bootstrap.min.js"></script>#}
+</html>

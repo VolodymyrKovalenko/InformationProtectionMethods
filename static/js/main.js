@@ -82,3 +82,12 @@ function destroyClickedElement2(event) {
   // remove the link from the DOM
   document.body.removeChild(event.target);
 }
+// localStorage['my.checkbox'] = false;
+//
+// $('#option2').click(function () {
+//     localStorage['my.checkbox'] = this.checked;
+// });
+//
+// $('#option2').prop('checked', localStorage['my.checkbox'] == 'true');
+
+$('input').val('');

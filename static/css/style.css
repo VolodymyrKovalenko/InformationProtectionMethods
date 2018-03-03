@@ -38,8 +38,8 @@
 
 .inputNumber{
     display: inline-block;
-    width: 150px;
-    margin-left: 30px;
+    width: 170px;
+
 }
 .ImgArrow{
     display: inline-block;
@@ -53,11 +53,36 @@
 }
 
 .saveButton{
-    margin-left: 75px;
+    margin-bottom: 10px;
     display: inline-block;
 }
 
 .MainSubmitButton{
     margin-top: -39px;
     margin-left: 380px;
+}
+
+.top_hrefs{
+
+    color: white;
+    text-decoration: none;
+}
+.top_hrefs:hover{
+
+    color: white;
+    text-decoration: none;
+}
+.top_div{
+    display: inline-block;
+    width: 300px;
+}
+
+.linear_eq{
+    display: inline-block;
+    width: 80px;
+}
+.eror1{
+    display: inline-block;
+    margin-left: 50px;
+    color: #d30000;
 }
