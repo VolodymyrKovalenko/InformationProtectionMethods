@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>encryption</title>
+    <title>Gambling</title>
 
     <link rel="stylesheet" href="../static/bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/css/style.css">
@@ -14,9 +14,9 @@
     <nav class="navbar navbar-inverse bg-inverse">
 
             <div class="top_div">
-                <a href="/" class="btn btn-primary active" role="button" aria-pressed="true">Caesar chifr</a>
+                <a href="/" class="btn btn-secondary active" role="button" aria-pressed="true">Caesar chifr</a>
                 <a href="/tritemius" class="btn btn-secondary active" role="button" aria-pressed="true">Tritemius chifr</a>
-                <a href="/gambling" class="btn btn-secondary active" role="button" aria-pressed="true">Gambling chifr</a>
+                <a href="/gambling" class="btn btn-primary active" role="button" aria-pressed="true">Gambling chifr</a>
             </div>
 
 
@@ -28,7 +28,7 @@
         <form  action="" method="post">
             <div><b>Enter message that you want to encrypt:</b></div>
 
-            <div><textarea class="TextArea1" id="myTextArea1" rows="10" cols="55" name="TextEncr">{{ my_data2 }}</textarea></div>
+            <div><textarea class="TextArea1" id="myTextArea1" rows="10" cols="55" name="TextEncr">{{ data_decr }}</textarea></div>
                 <div class="NumberArea1">
                     <p class="keyInput">Enter key:</p>
                     <input class="inputNumber form-control" name="InpKey1" type="number" value="1" id="example-number-input">
@@ -52,7 +52,7 @@
     <div class="MyContent2">
         <form  action="" method="post" enctype="multipart/form-data">
             <div><b>Enter message that you want to decrypt:</b></div>
-            <div><textarea class="TextArea1" id="myTextArea2" rows="10" cols="55" name="TextDecr">{{ my_data1 }}</textarea></div>
+            <div><textarea class="TextArea1" id="myTextArea2" rows="10" cols="55" name="TextDecr">{{ data_encr }}</textarea></div>
             <div class="NumberArea1">
                     <p class="keyInput">Enter key:</p>
                     <input class="inputNumber form-control" name="InpKey2" type="number" value="1" id="example-number-input">
