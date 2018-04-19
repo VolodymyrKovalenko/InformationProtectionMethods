@@ -39,8 +39,15 @@
 .inputNumber{
     display: inline-block;
     width: 170px;
-
 }
+.inputNumberBookish{
+    display: inline-block;
+    width: 380px;
+    height: 160px;
+    margin-left: 65px;
+    margin-top: -13px;
+}
+
 .ImgArrow{
     display: inline-block;
     width: 80px;
@@ -74,7 +81,7 @@
 }
 .top_div{
     display: inline-block;
-    width: 500px;
+    width: 600px;
 }
 
 .linear_eq{

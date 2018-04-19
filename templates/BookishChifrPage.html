@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>encryption</title>
+    <title>Bookish Chifr</title>
 
     <link rel="stylesheet" href="../static/bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/css/style.css">
@@ -14,10 +14,10 @@
     <nav class="navbar navbar-inverse bg-inverse">
 
             <div class="top_div">
-                <a href="/" class="btn btn-primary active" role="button" aria-pressed="true">Caesar chifr</a>
+                <a href="/" class="btn btn-secondary active" role="button" aria-pressed="true">Caesar chifr</a>
                 <a href="/tritemius" class="btn btn-secondary active" role="button" aria-pressed="true">Tritemius chifr</a>
                 <a href="/gambling" class="btn btn-secondary active" role="button" aria-pressed="true">Gambling chifr</a>
-                <a href="/bookish" class="btn btn-secondary active" role="button" aria-pressed="true">Bookish chifr</a>
+                <a href="/bookish" class="btn btn-primary active" role="button" aria-pressed="true">Bookish chifr</a>
             </div>
 
 
@@ -31,14 +31,13 @@
 
             <div><textarea class="TextArea1" id="myTextArea1" rows="10" cols="55" name="InpText">{{ data_decr }}</textarea></div>
                 <div class="NumberArea1">
-                    <p class="keyInput">Enter key:</p>
-                    <input class="inputNumber form-control" name="InpKey" type="number" value="1" id="example-number-input">
+                    <p class="keyInput"><b>Enter key:</b></p><br>
+                    <textarea class="inputNumberBookish form-control" name="InpKey" id="example-number-input" ></textarea><br>
                     <div class="saveButton">
                         <button class="btn btn-secondary" onclick="saveTextAsFile2()" value="save2" id="save2">Save Text to File</button>
                     </div>
                 </div>
             <div>
-{#                <label for="file">Choose file to upload</label>#}
                 <label class="custom-file">
                 <input class="custom-file-input" type="file" id="file1" name="file" onchange="onLoad()">
                 <span class="custom-file-control"></span>
@@ -55,14 +54,13 @@
             <div><b>Enter message that you want to decrypt:</b></div>
             <div><textarea class="TextArea1" id="myTextArea2" rows="10" cols="55" name="InpText">{{ data_encr }}</textarea></div>
             <div class="NumberArea1">
-                    <p class="keyInput">Enter key:</p>
-                    <input class="inputNumber form-control" name="InpKey" type="number" value="1" id="example-number-input">
+                    <p class="keyInput"><b>Enter key:</b></p><br>
+                    <textarea class="inputNumberBookish form-control" name="InpKey" id="example-number-input"></textarea><br>
                     <div class="saveButton">
                         <button class="btn btn-secondary" onclick="saveTextAsFile()" value="save" id="save">Save Text to File</button>
                     </div>
                 </div>
             <div>
-{#                <label for="file">Choose file to upload</label>#}
                 <label class="custom-file">
                     <input class="custom-file-input" type="file" id="file2" name="file" onchange="onLoad2()">
                     <span class="custom-file-control"></span>
@@ -81,5 +79,5 @@
 
 </body>
     <script src="../static/bootstrap-4.0.0-alpha.6-dist/js/bootstrap.js"></script>
-{#    <script src="../static/bootstrap-4.0.0-alpha.6-dist/js/bootstrap.min.js"></script>#}
+
 </html>
