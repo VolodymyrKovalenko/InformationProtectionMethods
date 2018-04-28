@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify, json
 import string
 import re
+import os
+from Crypto.Cipher import DES
 
 from TritemiusModule import TritemiusChifr
 from CaesarModule import CaesarChifr
@@ -28,26 +30,18 @@ def caesar_app():
 
 @app.route('/tritemius', methods=['GET', 'POST'])
 def tritemius_app():
-    error = 'Enter all the fields'
     if request.method == 'POST':
         input_array = []
         input_text = request.form['InpText']
-        if len(request.form['InpKey']) != 0:
+        radio_option = request.form.get('trt_radio')
+        if radio_option == 1:
             input_array.append(request.form['InpKey'])
 
-        elif len(request.form['InpKey1']) != 0:
-            if len(request.form['InpKey2']) != 0:
-                input_array.extend((int(request.form['InpKey1']), int(request.form['InpKey2'])))
-            else:
-                return render_template('TritemiusPage.html', er_info=error)
+        elif radio_option == 2:
+            input_array.extend((int(request.form['InpKey1']), int(request.form['InpKey2'])))
 
         else:
-            if len(request.form['InpKey31']) != 0 and len(request.form['InpKey32']) != 0 and len(
-                    request.form['InpKey33']) != 0:
-                input_array.extend(
-                    (int(request.form['InpKey31']), int(request.form['InpKey32']), int(request.form['InpKey33'])))
-            else:
-                return render_template('TritemiusPage.html', er_info=error)
+            input_array.extend((int(request.form['InpKey31']), int(request.form['InpKey32']), int(request.form['InpKey33'])))
 
         obj = TritemiusChifr(input_text, input_array)
         obj.find_key()
@@ -94,6 +88,46 @@ def bookish_app():
 
     return render_template('BookishChifrPage.html')
 
+@app.route('/des_aes',methods=['GET','POST'])
+def des_aes_app():
+    if request.method == 'POST':
+        input_text = request.form['InpText']
+        input_key = request.form['InpKey']
+        iv = request.form['init_vector']
+        input_des_method = request.form.get('des_method')
+        mode_option = {
+            'ECB': DES.MODE_ECB,
+            'CBC': DES.MODE_CBC,
+            'CFB': DES.MODE_CFB,
+            'OFB': DES.MODE_OFB,
+            'CTR': DES.MODE_CTR
+        }
+        try:
+            des_mode = mode_option[input_des_method]
+        except KeyError:
+            des_mode = None
+        try:
+            obj = DES.new(input_key, des_mode,iv)
+        except ValueError:
+            return render_template('DesChifr.html', data_encr='Key and initialization vector must be 8 bytes long')
+
+        if 'encr_form' in request.form:
+            try:
+                res_message = obj.encrypt(input_text)
+            except ValueError:
+                return render_template('DesChifr.html',data_encr='Input strings must be a multiple of 8 in length. Length {} instead.'.format(len(input_text)))
+
+            res_message = res_message.decode("latin-1")
+            return render_template('DesChifr.html', data_encr=res_message)
+        elif 'decr_form' in request.form:
+            input_text = input_text.encode("latin-1")
+            try:
+                res_message = obj.decrypt(input_text)
+            except ValueError:
+                return render_template('DesChifr.html',data_decr = 'Input strings must be a multiple of 8 in length. Length {} instead.'.format(len(input_text)))
+            res_message = res_message.decode("latin-1")
+            return render_template('DesChifr.html',data_decr=res_message)
+    return render_template('DesChifr.html')
 
 @app.errorhandler(404)
 def page_not_found(e):

@@ -20,9 +20,9 @@ class BookingChifr():
         for symbol in self.message:
             find_symbol = False
             res_str = ''
-            startRow = random.randint(0,len(self.arr_of_split_key)-1)
+            start_row = random.randint(0,len(self.arr_of_split_key)-1)
 
-            for i in range(startRow,len(self.key.splitlines())):
+            for i in range(start_row,len(self.key.splitlines())):
                 try:
                     encr_symbol_index = self.arr_of_split_key[i].index(symbol)
                     res_str = '{}/{},'.format(str(i),str(encr_symbol_index))
@@ -32,7 +32,7 @@ class BookingChifr():
                     continue
 
             if find_symbol == False:
-                for i in range(0,startRow):
+                for i in range(0,start_row):
                     try:
                         encr_symbol_index = self.arr_of_split_key[i].index(symbol)
                         res_str = '{}/{},'.format(str(i), str(encr_symbol_index))

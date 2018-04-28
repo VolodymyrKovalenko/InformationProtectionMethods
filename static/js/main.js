@@ -91,3 +91,4 @@ function destroyClickedElement2(event) {
 // $('#option2').prop('checked', localStorage['my.checkbox'] == 'true');
 
 $('input').val('');
+

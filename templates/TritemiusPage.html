@@ -35,6 +35,8 @@ if(radio[i].id != targ) radio[i].value = '';
             <a href="/tritemius" class="btn btn-primary active" role="button" aria-pressed="true">Tritemius chifr</a>
             <a href="/gambling" class="btn btn-secondary active" role="button" aria-pressed="true">Gambling chifr</a>
             <a href="/bookish" class="btn btn-secondary active" role="button" aria-pressed="true">Bookish chifr</a>
+            <a href="/des_aes" class="btn btn-secondary active" role="button" aria-pressed="true">Des chifr</a>
+
     </div>
 
 
@@ -52,14 +54,14 @@ if(radio[i].id != targ) radio[i].value = '';
             <div><textarea class="TextArea1" id="myTextArea1" rows="10" cols="55" name="InpText">{{ data_decr }}</textarea></div>
                 <div class="NumberArea1">
 
-                    <input type="radio" name="1"  id="1"><label class="r1 " for="1">Enter slogan key:<br>
+                    <input type="radio" name="trt_radio"  id="1" value="1"><label class="r1 " for="1">Enter slogan key:<br>
                     <input class="radio1 inputNumber form-control" type="text" name="InpKey" id="disableKey2"></label>
 
-                    <input type="radio" name="1" id="2"><label class="r1" for="2" >Enter linear equation key:<br>
+                    <input type="radio" name="trt_radio" id="2" value="2"><label class="r1" for="2" >Enter linear equation key:<br>
                     <input id="disableKey2" class="radio1 linear_eq form-control" type="number" name="InpKey1">  * P + <input id="disableKey2" class="radio1 linear_eq form-control" type="number" name="InpKey2">
                     </label>
 
-                    <input type="radio" name="1" id="3" checked=""><label class="r1" for="3" >Enter nonlinear equation key: <br>
+                    <input type="radio" name="trt_radio" id="3" checked="" value="3"><label class="r1" for="3" >Enter nonlinear equation key: <br>
                      <input id="disableKey2" class="radio1 linear_eq form-control" type="number" name="InpKey31"> * P^2 + <input id="disableKey2" class="radio1 linear_eq form-control" type="number" name="InpKey32"> * P +
                     <input id="disableKey2" class="radio1 linear_eq form-control" type="number" name="InpKey33">
                 </label>
@@ -88,14 +90,14 @@ if(radio[i].id != targ) radio[i].value = '';
             <div><textarea class="TextArea1" id="myTextArea2" rows="10" cols="55" name="InpText">{{ data_encr }}</textarea></div>
             <div class="NumberArea1">
 
-                    <input type="radio" name="1"  id="1"><label class="r1 " for="1">Enter slogan key:<br>
+                    <input type="radio" name="trt_radio"  id="1" value="1"><label class="r1 " for="1">Enter slogan key:<br>
                     <input class="inputNumber form-control" type="text" name="InpKey" id="disableKey2"></label>
 
-                    <input type="radio" name="1" id="2"><label class="r1" for="2" >Enter linear equation key:<br>
+                    <input type="radio" name="trt_radio" id="2" value="2"><label class="r1" for="2" >Enter linear equation key:<br>
                     <input id="disableKey2" class="linear_eq form-control" type="number" name="InpKey1">  * P + <input id="disableKey2" class="linear_eq form-control" type="number" name="InpKey2">
                     </label>
 
-                    <input type="radio" name="1" id="3" checked=""><label class="r1" for="3" >Enter nonlinear equation key: <br>
+                    <input type="radio" name="trt_radio" id="3" checked="" value="3"><label class="r1" for="3" >Enter nonlinear equation key: <br>
                      <input id="disableKey2" class="linear_eq form-control" type="number" name="InpKey31"> * P^2 + <input id="disableKey2" class="linear_eq form-control" type="number" name="InpKey32"> * P +
                     <input id="disableKey2" class="linear_eq form-control" type="number" name="InpKey33">
                 </label>

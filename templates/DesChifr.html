@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Gambling</title>
+    <title>Des chifr</title>
 
     <link rel="stylesheet" href="../static/bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/css/style.css">
@@ -16,10 +16,9 @@
             <div class="top_div">
                 <a href="/" class="btn btn-secondary active" role="button" aria-pressed="true">Caesar chifr</a>
                 <a href="/tritemius" class="btn btn-secondary active" role="button" aria-pressed="true">Tritemius chifr</a>
-                <a href="/gambling" class="btn btn-primary active" role="button" aria-pressed="true">Gambling chifr</a>
+                <a href="/gambling" class="btn btn-secondary active" role="button" aria-pressed="true">Gambling chifr</a>
                 <a href="/bookish" class="btn btn-secondary active" role="button" aria-pressed="true">Bookish chifr</a>
-                <a href="/des_aes" class="btn btn-secondary active" role="button" aria-pressed="true">Des chifr</a>
-
+                <a href="/des_aes" class="btn btn-primary active"  role="button" aria-pressed="true">Des chifr</a>
             </div>
 
 
@@ -34,7 +33,14 @@
             <div><textarea class="TextArea1" id="myTextArea1" rows="10" cols="55" name="InpText">{{ data_decr }}</textarea></div>
                 <div class="NumberArea1">
                     <p class="keyInput">Enter key:</p>
-                    <input class="inputNumber form-control" name="InpKey" type="number" value="1" id="example-number-input">
+                    <input class="inputNumber form-control" name="InpKey" type="text"  id="example-number-input">
+                    <label><input type="radio" name="des_method" value="ECB" checked>ECB</label>
+                    <label><input type="radio" name="des_method" value="CBC">CBC</label>
+                    <label><input type="radio" name="des_method" value="CFB">CFB</label>
+                    <label><input type="radio" name="des_method" value="OFB">OFB</label>
+                    <label><input type="radio" name="des_method" value="CTR" id="ctr_des">CTR</label>
+                    <p class="keyInput">Enter initialization vector:</p>
+                    <input class="inputNumber form-control" name="init_vector" type="text"  id="example-number-input">
                     <div class="saveButton">
                         <button class="btn btn-secondary" onclick="saveTextAsFile2()" value="save2" id="save2">Save Text to File</button>
                     </div>
@@ -58,7 +64,15 @@
             <div><textarea class="TextArea1" id="myTextArea2" rows="10" cols="55" name="InpText">{{ data_encr }}</textarea></div>
             <div class="NumberArea1">
                     <p class="keyInput">Enter key:</p>
-                    <input class="inputNumber form-control" name="InpKey" type="number" value="1" id="example-number-input">
+                    <input class="inputNumber form-control" name="InpKey" type="text" id="example-number-input">
+                    <label><input type="radio" name="des_method" value="ECB" checked>ECB</label>
+                    <label><input type="radio" name="des_method" value="CBC">CBC</label>
+                    <label><input type="radio" name="des_method" value="CFB">CFB</label>
+                    <label><input type="radio" name="des_method" value="OFB">OFB</label>
+                    <label><input type="radio" name="des_method" value="CTR">CTR</label>
+                    <p class="keyInput">Enter initialization vector:</p>
+                    <input class="inputNumber form-control" name="init_vector" type="text"  id="example-number-input">
+
                     <div class="saveButton">
                         <button class="btn btn-secondary" onclick="saveTextAsFile()" value="save" id="save">Save Text to File</button>
                     </div>
