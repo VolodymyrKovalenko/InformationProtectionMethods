@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>encryption</title>
+    <title>Backpack</title>
 
     <link rel="stylesheet" href="../static/bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/css/style.css">
@@ -14,13 +14,12 @@
     <nav class="navbar navbar-inverse bg-inverse">
 
             <div class="top_div">
-                <a href="/" class="btn btn-primary active" role="button" aria-pressed="true">Caesar chifr</a>
+                <a href="/" class="btn btn-secondary active" role="button" aria-pressed="true">Caesar chifr</a>
                 <a href="/tritemius" class="btn btn-secondary active" role="button" aria-pressed="true">Tritemius chifr</a>
                 <a href="/gambling" class="btn btn-secondary active" role="button" aria-pressed="true">Gambling chifr</a>
                 <a href="/bookish" class="btn btn-secondary active" role="button" aria-pressed="true">Bookish chifr</a>
                 <a href="/des_aes" class="btn btn-secondary active" role="button" aria-pressed="true">Des chifr</a>
-                <a href="/backpack" class="btn btn-secondary active" role="button" aria-pressed="true">Backpack chifr</a>
-
+                <a href="/backpack" class="btn btn-primary active" role="button" aria-pressed="true">Backpack chifr</a>
 
             </div>
 
@@ -35,8 +34,12 @@
 
             <div><textarea class="TextArea1" id="myTextArea1" rows="10" cols="55" name="InpText">{{ data_decr }}</textarea></div>
                 <div class="NumberArea1">
-                    <p class="keyInput">Enter key:</p>
-                    <input class="inputNumber form-control" name="InpKey" type="number" value="1" id="example-number-input">
+                    <p class="keyInput">Enter sequence: </p>
+                    <input style="width: 380px" class="inputNumber form-control" name="InpKey" type="text" value="1" id="example-number-input"><br>
+                    <p class="keyInput">Enter m: </p>
+                    <input class="inputNumber2 form-control" name="InpKeyM" type="number" value="1" id="example-number-input">
+                    <p class="keyInput">Enter t: </p>
+                    <input class="inputNumber2 form-control" name="InpKeyT" type="number" value="1" id="example-number-input">
                     <div class="saveButton">
                         <button class="btn btn-secondary" onclick="saveTextAsFile2()" value="save2" id="save2">Save Text to File</button>
                     </div>
@@ -59,8 +62,12 @@
             <div><b>Enter message that you want to decrypt:</b></div>
             <div><textarea class="TextArea1" id="myTextArea2" rows="10" cols="55" name="InpText">{{ data_encr }}</textarea></div>
             <div class="NumberArea1">
-                    <p class="keyInput">Enter key:</p>
-                    <input class="inputNumber form-control" name="InpKey" type="number" value="1" id="example-number-input">
+                    <p class="keyInput">Enter sequence: </p>
+                    <input style="width: 380px" class="inputNumber form-control" name="InpKey" type="text" value="{{ sequence_key }}" id="example-number-input"><br>
+                    <p class="keyInput">Enter m: </p>
+                    <input class="inputNumber2 form-control" name="InpKeyM" type="number" value="1" id="example-number-input">
+                    <p class="keyInput">Enter t: </p>
+                    <input class="inputNumber2 form-control" name="InpKeyT" type="number" value="1" id="example-number-input">
                     <div class="saveButton">
                         <button class="btn btn-secondary" onclick="saveTextAsFile()" value="save" id="save">Save Text to File</button>
                     </div>

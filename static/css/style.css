@@ -40,6 +40,10 @@
     display: inline-block;
     width: 170px;
 }
+.inputNumber2{
+    display: inline-block;
+    width: 110px;
+}
 .inputNumberBookish{
     display: inline-block;
     width: 380px;
