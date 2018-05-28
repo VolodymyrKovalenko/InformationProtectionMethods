@@ -137,17 +137,21 @@ def page_not_found(e):
 @app.route('/backpack', methods=['GET', 'POST'])
 def backpack_app():
     if request.method == 'POST':
-        input_text = request.form['InpText']
-        input_key = request.form['InpKey']
-        input_m = int(request.form['InpKeyM'])
-        input_t = int(request.form['InpKeyT'])
-        obj = BackpackChifr(input_text,input_key,input_m,input_t)
-
         if 'encr_form' in request.form:
-            res_message, sequence_key = obj.encr()
-            return render_template('BackpackChifrPage.html', data_encr=res_message,sequence_key=sequence_key)
+            text = request.form['InpText']
+            open_key = request.form['OpenKey']
+            obj = BackpackChifr(text,None,None,None,open_key)
+            res_message = obj.encr()
+
+            return render_template('BackpackChifrPage.html', data_encr=res_message)
         elif 'decr_form' in request.form:
+            text = request.form['InpText']
+            private_key = request.form['InpKey']
+            m = int(request.form['InpKeyM'])
+            t = int(request.form['InpKeyT'])
+            obj = BackpackChifr(text,private_key, m, t, None)
             res_message = obj.decr()
+
             return render_template('BackpackChifrPage.html', data_decr=res_message)
     return render_template('BackpackChifrPage.html')
 

@@ -119,3 +119,10 @@
     text-decoration: none;
     border-bottom: 1px solid
 }
+.openKey{
+    margin-bottom: 10px;
+}
+.openInputKey{
+    margin-bottom:10px;
+    width: 500px;
+}

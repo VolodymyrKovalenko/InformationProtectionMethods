@@ -9,6 +9,7 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
     <script src="../static/js/main.js"></script>
+    <script src="../static/js/openKey.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-inverse bg-inverse">
@@ -29,23 +30,26 @@
 
     <div class="mainBlock">
     <div class="MyContent1">
-        <form  action="" method="post">
+        <form  action="" method="post" name="1name">
             <div><b>Enter message that you want to encrypt:</b></div>
 
             <div><textarea class="TextArea1" id="myTextArea1" rows="10" cols="55" name="InpText">{{ data_decr }}</textarea></div>
                 <div class="NumberArea1">
                     <p class="keyInput">Enter sequence: </p>
-                    <input style="width: 380px" class="inputNumber form-control" name="InpKey" type="text" value="1" id="example-number-input"><br>
+                    <input style="width: 380px" class="inputNumber form-control" name="InpKey" type="text" value="1" id="inpSequenceKey"><br>
                     <p class="keyInput">Enter m: </p>
-                    <input class="inputNumber2 form-control" name="InpKeyM" type="number" value="1" id="example-number-input">
+                    <input class="inputNumber2 form-control" name="InpKeyM" type="number" value="1" id="inpKeyM">
                     <p class="keyInput">Enter t: </p>
-                    <input class="inputNumber2 form-control" name="InpKeyT" type="number" value="1" id="example-number-input">
+                    <input class="inputNumber2 form-control" name="InpKeyT" type="number" value="1" id="inpKeyT">
+                    <button type="button" class="btn btn-primary" id="crtOpenKey">Create open key</button>
                     <div class="saveButton">
+                        <div class="openKey">Open Key: </div>
+                    <input class="openInputKey form-control" name="OpenKey" type="text" value="" id="outOpenKey">
+
                         <button class="btn btn-secondary" onclick="saveTextAsFile2()" value="save2" id="save2">Save Text to File</button>
                     </div>
                 </div>
             <div>
-{#                <label for="file">Choose file to upload</label>#}
                 <label class="custom-file">
                 <input class="custom-file-input" type="file" id="file1" name="file" onchange="onLoad()">
                 <span class="custom-file-control"></span>
@@ -58,12 +62,13 @@
         <div  class="ImgArrow"><img class="Img2" src="../static/img/____20140606_1026252225.png" alt=""></div>
 
     <div class="MyContent2">
-        <form  action="" method="post" enctype="multipart/form-data">
+        <form  action="" method="post" enctype="multipart/form-data" name="2form">
             <div><b>Enter message that you want to decrypt:</b></div>
             <div><textarea class="TextArea1" id="myTextArea2" rows="10" cols="55" name="InpText">{{ data_encr }}</textarea></div>
             <div class="NumberArea1">
+
                     <p class="keyInput">Enter sequence: </p>
-                    <input style="width: 380px" class="inputNumber form-control" name="InpKey" type="text" value="{{ sequence_key }}" id="example-number-input"><br>
+                    <input style="width: 380px" class="inputNumber form-control" name="InpKey" type="text" value="" id="example-number-input"><br>
                     <p class="keyInput">Enter m: </p>
                     <input class="inputNumber2 form-control" name="InpKeyM" type="number" value="1" id="example-number-input">
                     <p class="keyInput">Enter t: </p>
